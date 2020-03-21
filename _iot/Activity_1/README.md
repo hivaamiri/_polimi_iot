@@ -31,28 +31,29 @@ It requires sending two different amounts of data over the radio. In this case, 
 
 Toggling the LEDs uses the ID of the sender mote. It means that when a mote receives a message, it looks at the ID of the sender which is stored in a received packet, by doing an `if` condition, the corresponding LED will toggle every time a message received from the same mote.
 
+    event message_t* Receive.receive(message_t* bufPtr, void* payload, uint8_t len) {
+        if (len != sizeof(radio_count_msg_t)) {return bufPtr;}
+        else {
+        radio_count_msg_t* msg = (radio_count_msg_t*)payload;
+        _localCounter++; // this variable increamented once a true message received to the mote
         // following if conditions Toggles the LEDs based on the ID of the sender mote
-        if (msg->IdOfMote == 1) 
+        if (msg->IdOfMote == 1) { call Leds.led0Toggle(); }
+        if (msg->IdOfMote == 2) { call Leds.led1Toggle(); }
+        if (msg->IdOfMote == 3) { call Leds.led2Toggle(); }
+        if (msg->counter % 10 == 0)	//if counter mod 10 equals to 0, it makes the LEDs off
         {
-            call Leds.led0Toggle();
-        }
-
-        if (msg->IdOfMote == 2) 
-        {
-            call Leds.led1Toggle();
-        }
-
-        if (msg->IdOfMote == 3) 
-        {
-            call Leds.led2Toggle();
-        }
-
+            call Leds.led0Off();
+            call Leds.led1Off();
+            call Leds.led2Off();
+        } 	
+        return bufPtr;
+    }}
 
 
 Each time a mote receives a true message, the counter variable increments one step. Afterward, an `if` condition determines that the counter is a factor of 10 or not, if yes, it turns off all the LEDs of the receiver mote.
 It worth mentioning that the value of counter incremented in a mote is separated from the value of counter received. It means that the turning of the LEDs is based on the counter value received from other motes. 
 
-        if (msg->counter % 10 == 0)	//if counter mod 10 equals to 0, it makes the LEDs off
+        if (msg->counter % 10 == 0)	//the value of counter is different from the local counter since its value comes from received message
         {
             call Leds.led0Off();
             call Leds.led1Off();
