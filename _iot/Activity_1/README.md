@@ -4,17 +4,18 @@ First Activity of IoT course
 - Academic year 2019-2020
 - 2nd semester of 1st year
 - Politecnico di Milano
+
 ________________________
  Group members:
- =
+ -
 > - Hiva Amiri                       10696153
 > - Erfan Abbasi Zadeh Behbahani     10628157
 > - MohammadJavad Ebrahimpour        10696374
 ________________________
 
 Approaches
-=
-To fulfill the activity requirements the following steps have been made:
+-
+ To fulfill the activity requirements the following steps have been made:
 
 In the case of motes functioning in a specific frequency, we can compile a unique code for each mote. For instance, we want mote 1 function at 1Hz so we compile e specific code in which the timer has been set to work at 1Hz, afterward we compile another code that works at 3Hz and we upload it to the 2nd mote and so far.
 Another approach is that we can set a variable for Timer component as an argument of the function and an `if` condition determines in which frequency the current mote do its job based on the ID of the mote
@@ -48,9 +49,10 @@ Toggling the LEDs uses the ID of the sender mote. It means that when a mote rece
 
 
 
-Each time a mote receives a true message, the counter variable increments one step. Afterward an `if` condition determines that the counter is a factor of 10 or not, if yes, it turns off all the LEDs of the receiver mote.
+Each time a mote receives a true message, the counter variable increments one step. Afterward, an `if` condition determines that the counter is a factor of 10 or not, if yes, it turns off all the LEDs of the receiver mote.
+It worth mentioning that the value of counter incremented in a mote is separated from the value of counter received. It means that the turning of the LEDs is based on the counter value received from other motes. 
 
-        if (counter % 10 == 0)	//if counter mod 10 equals to 0, it makes the LEDs off
+        if (msg->counter % 10 == 0)	//if counter mod 10 equals to 0, it makes the LEDs off
         {
             call Leds.led0Off();
             call Leds.led1Off();
