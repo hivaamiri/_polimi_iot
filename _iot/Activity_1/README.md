@@ -18,7 +18,45 @@ Approaches
  To fulfill the activity requirements the following steps have been made:
 
 In the case of motes functioning in a specific frequency, we can compile a unique code for each mote. For instance, we want mote 1 function at 1Hz so we compile e specific code in which the timer has been set to work at 1Hz, afterward we compile another code that works at 3Hz and we upload it to the 2nd mote and so far.
-Another approach is that we can set a variable for Timer component as an argument of the function and an `if` condition determines in which frequency the current mote do its job based on the ID of the mote
+
+    event void AMControl.startDone(error_t err) 
+    {
+        if (err == SUCCESS) // constant SUCCESS which equals 0 to check that is there an error starting the radio or not
+        {// assign a frequency to send messages based on ID
+        	if(TOS_NODE_ID == 1){
+        		_frequency = 1000;
+        		call MilliTimer.startPeriodic(_frequency);
+        	}
+        	else{
+        		if(TOS_NODE_ID == 2){
+        			_frequency = 333;
+        			call MilliTimer.startPeriodic(_frequency);
+        		}
+        		else{
+        			if (TOS_NODE_ID == 3){        		
+        				_frequency = 200;
+        				call MilliTimer.startPeriodic(_frequency);
+        			}
+        			else 
+        				call MilliTimer.startPeriodic(_frequency); // in case if none of above happens, a default frequency would be set
+        		}}}
+        else 
+        {call AMControl.start();}	// if there is an error in starting the radio, this line tries to start it over and over
+        }
+
+
+
+Another approach is that we can set a variable for Timer component as an argument of the function and an `if` condition determines in which frequency the current mote do its job based on the ID of the mote.
+
+    event void AMControl.startDone(error_t err) 
+        {
+            if (err == SUCCESS) // constant SUCCESS which equals 0 to check that is there an error starting the radio or not
+            {// assign a frequency to send messages based on ID
+                call MilliTimer.startPeriodic(200); // in case if none of above happens, a default frequency would be set
+            }
+            else 
+            {call AMControl.start();}	// if there is an error in starting the radio, this line tries to start it over and over
+         }
 Both approaches have been developed and uploaded in a separate folder. 
 
 It requires sending two different amounts of data over the radio. In this case, we need two variables, one for sending mote ID and second to send counter. To do this, a 16bit unsigned integer variable has been set for sending counter and an 8bit unsigned integer variable has been set for mote ID. So we need to modify the header file to add a `uint8_t` to the payload.
