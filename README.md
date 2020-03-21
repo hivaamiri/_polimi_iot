@@ -2,4 +2,4 @@
 Politecnico di Milano
 -
 
-projects of the iot course will be uploaded in this repositories. 
+projects of the iot course will be uploaded in this repository. 
