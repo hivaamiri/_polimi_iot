@@ -1,5 +1,18 @@
-Activity 2
+
+2d Activity of IoT course
 =
+- Academic year 2019-2020
+- 2nd semester of 1st year
+- Politecnico di Milano
+
+________________________
+ Group members:
+ -
+> - Hiva Amiri                       10696153
+> - Erfan Abbasi Zadeh Behbahani     10628157
+> - MohammadJavad Ebrahimpour        10696374
+________________________
+
 Requirements
 -
 Implement a project using TinyOS platform to send an acknowledgement request among two nodes. There are two nodes named node 1 and node 2 and node one wants to send an Ack request to the node two. While node two turns on after five seconds of booting node one. When node one gets the first Ack response from node two, transmitting data will stop. On the other hand, node two receive an Ack request from node one, and it response with a message containing a counter which counts the number of requests of both nodes and a data from a fake temperature sensor.
