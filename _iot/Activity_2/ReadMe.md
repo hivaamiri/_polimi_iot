@@ -1,5 +1,5 @@
 
-2d Activity of IoT course
+2nd Activity of IoT course
 =
 - Academic year 2019-2020
 - 2nd semester of 1st year
