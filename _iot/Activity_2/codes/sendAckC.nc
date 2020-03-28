@@ -51,7 +51,7 @@ implementation
             dbg_clear("radio_send","\n");
             dbg_clear("radio_pack","\n");
 
-			_counter++; // increaments in each try to send
+			
         }
     }
 //#################### Send Response function ####################
@@ -91,7 +91,8 @@ implementation
 //#################### MilliTimer function ####################
     event void MilliTimer.fired()
     {
-        sendReq();     // it calls sendReq function to send a ACK REQ request 
+        sendReq();     // it calls sendReq function to send a ACK REQ request
+        _counter++; // increaments in each try to send 
     }
 
 //#################### AMSend, sendDone ####################
@@ -140,6 +141,7 @@ implementation
         if(MSG->_typeMessage == REQ) // if the received message is a REQ type message, start response procedure by calling its task
         {        	
             sendResp();
+            _counter = MSG->_counterMessage;
         }
     return _rec_buffer;
     } 
