@@ -1,0 +1,156 @@
+********************************************
+*                                          *
+*             TOSSIM Script                *
+*                                          *
+********************************************
+Initializing mac....
+Initializing radio channels....
+    using topology file: topology.txt
+    using noise file: meyer-heavy.txt
+Initializing simulator....
+Activate debug message on channel init
+Activate debug message on channel boot
+Activate debug message on channel radio
+Activate debug message on channel radio_send
+Activate debug message on channel radio_ack
+Activate debug message on channel radio_rec
+Activate debug message on channel radio_pack
+Activate debug message on channel role
+Creating node 1...
+>>>Will boot at time 0 [sec]
+Creating node 2...
+>>>Will boot at time 5 [sec]
+Creating radio channels...
+>>>Setting radio channel from node  1  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  1  with gain  -60.0  dBm
+Initializing Closest Pattern Matching (CPM)...
+Reading noise model data file: meyer-heavy.txt
+Loading:##Done!
+>>>Creating noise model for node: 1
+>>>Creating noise model for node: 2
+Start simulation with TOSSIM! 
+
+
+
+DEBUG (1): Node booted. Report from node: 1
+=======================================
+DEBUG (1): Turnning on radio ... 
+DEBUG (1): Radio is on now. 
+DEBUG (1): Node 1 starts sending ACK request... ----> execution time 0:0:0.000000010 
+DEBUG (1): Message packet was made and delivered to physical layer to send via radio ... ----> execution time 0:0:0.976562510 
+DEBUG (1): Try to send a request to node 2 ----> execution time 0:0:0.976562510 
+DEBUG (1): Payload status:
+	 Source         : 1 
+ 	 Destination    : 2 
+ 	 Type of Message: 1 
+ 	 Counter valuse : 0 
+ 	 Temperature    : 0 
+ 
+
+DEBUG (1): Message was sent successfully.----> execution time 0:0:0.984512292 
+DEBUG (1): ACK message was NOT received. ----> execution time 0:0:0.984512292 
+Sending new ACK request.
+DEBUG (1): Message packet was made and delivered to physical layer to send via radio ... ----> execution time 0:0:1.953125010 
+DEBUG (1): Try to send a request to node 2 ----> execution time 0:0:1.953125010 
+DEBUG (1): Payload status:
+	 Source         : 1 
+ 	 Destination    : 2 
+ 	 Type of Message: 1 
+ 	 Counter valuse : 1 
+ 	 Temperature    : 0 
+ 
+
+DEBUG (1): Message was sent successfully.----> execution time 0:0:1.957748396 
+DEBUG (1): ACK message was NOT received. ----> execution time 0:0:1.957748396 
+Sending new ACK request.
+DEBUG (1): Message packet was made and delivered to physical layer to send via radio ... ----> execution time 0:0:2.929687510 
+DEBUG (1): Try to send a request to node 2 ----> execution time 0:0:2.929687510 
+DEBUG (1): Payload status:
+	 Source         : 1 
+ 	 Destination    : 2 
+ 	 Type of Message: 1 
+ 	 Counter valuse : 2 
+ 	 Temperature    : 0 
+ 
+
+DEBUG (1): Message was sent successfully.----> execution time 0:0:2.933181752 
+DEBUG (1): ACK message was NOT received. ----> execution time 0:0:2.933181752 
+Sending new ACK request.
+DEBUG (1): Message packet was made and delivered to physical layer to send via radio ... ----> execution time 0:0:3.906250010 
+DEBUG (1): Try to send a request to node 2 ----> execution time 0:0:3.906250010 
+DEBUG (1): Payload status:
+	 Source         : 1 
+ 	 Destination    : 2 
+ 	 Type of Message: 1 
+ 	 Counter valuse : 3 
+ 	 Temperature    : 0 
+ 
+
+DEBUG (1): Message was sent successfully.----> execution time 0:0:3.912658664 
+DEBUG (1): ACK message was NOT received. ----> execution time 0:0:3.912658664 
+Sending new ACK request.
+DEBUG (1): Message packet was made and delivered to physical layer to send via radio ... ----> execution time 0:0:4.882812510 
+DEBUG (1): Try to send a request to node 2 ----> execution time 0:0:4.882812510 
+DEBUG (1): Payload status:
+	 Source         : 1 
+ 	 Destination    : 2 
+ 	 Type of Message: 1 
+ 	 Counter valuse : 4 
+ 	 Temperature    : 0 
+ 
+
+DEBUG (1): Message was sent successfully.----> execution time 0:0:4.887313826 
+DEBUG (1): ACK message was NOT received. ----> execution time 0:0:4.887313826 
+Sending new ACK request.
+DEBUG (2): Node booted. Report from node: 2
+=======================================
+DEBUG (2): Turnning on radio ... 
+DEBUG (2): Radio is on now. 
+DEBUG (1): Message packet was made and delivered to physical layer to send via radio ... ----> execution time 0:0:5.859375010 
+DEBUG (1): Try to send a request to node 2 ----> execution time 0:0:5.859375010 
+DEBUG (1): Payload status:
+	 Source         : 1 
+ 	 Destination    : 2 
+ 	 Type of Message: 1 
+ 	 Counter valuse : 5 
+ 	 Temperature    : 0 
+ 
+
+DEBUG (2): Message received. ----> 0:0:5.868820145 
+DEBUG (2): Payload status:
+	 Source         : 0 
+ 	 Destination    : 0 
+ 	 Type of Message: 1 
+ 	 Counter valuse : 5 
+ 	 Temperature    : 0 
+ 
+
+DEBUG (1): Message was sent successfully.----> execution time 0:0:5.868987991 
+DEBUG (1): ACK message received.----> execution time 0:0:5.868987991 
+DEBUG (1): Sending message was stoped.
+DEBUG (2): Sending a response to node 1 ----> execution time 0:0:5.877929697 
+DEBUG (2): Try to send a request to node 1 ----> execution time 0:0:5.877929697 
+DEBUG (2): Payload status:
+	 Source         : 2 
+ 	 Destination    : 1 
+ 	 Type of Message: 2 
+ 	 Counter valuse : 0 
+ 	 Temperature    : 245 
+ 
+
+DEBUG (1): Message received. ----> 0:0:5.886840778 
+DEBUG (1): Payload status:
+	 Source         : 1 
+ 	 Destination    : 2 
+ 	 Type of Message: 2 
+ 	 Counter valuse : 0 
+ 	 Temperature    : 245 
+ 
+
+DEBUG (2): Message was sent successfully.----> execution time 0:0:5.887008624 
+DEBUG (2): ACK message received.----> execution time 0:0:5.887008624 
+DEBUG (2): Sending message was stoped.
+
+
+
+Simulation finished!
