@@ -42,9 +42,7 @@ implementation
         {
         																	//if sending message is succesful the following reports will be printed.
             dbg("radio_send", "Try to send a request to node 2 ----> execution time %s \n", sim_time_string());// the exact time of sending message
-            dbg("radio_send", "Payload status:\n"); 
-            dbg_clear("radio_pack","\t Source         : %hhu \n ", call AMPacket.source(&packet));
-            dbg_clear("radio_pack","\t Destination    : %hhu \n ", call AMPacket.destination(&packet));
+            dbg("radio_send", "Payload data:\n"); 
             dbg_clear("radio_pack","\t Type of Message: %hhu \n ",MSG->_typeMessage);
             dbg_clear("radio_pack","\t Counter valuse : %hhu \n ",MSG->_counterMessage);
             dbg_clear("radio_pack","\t Temperature    : %hhu \n ",MSG->_dataMessage);
@@ -129,9 +127,7 @@ implementation
         _messageToSend_t* MSG = (_messageToSend_t*)payload;// make a _messageToSend_t* type variable and put the recived message into it
         
         dbg("radio_rec", "Message received. ----> %s \n", sim_time_string());
-        dbg("radio_send", "Payload status:\n"); 
-        dbg_clear("radio_pack","\t Source         : %hhu \n ", call AMPacket.source(&packet));
-        dbg_clear("radio_pack","\t Destination    : %hhu \n ", call AMPacket.destination(&packet));
+        dbg("radio_send", "Payload data:\n"); 
         dbg_clear("radio_pack","\t Type of Message: %hhu \n ",MSG->_typeMessage);
         dbg_clear("radio_pack","\t Counter valuse : %hhu \n ",MSG->_counterMessage);
         dbg_clear("radio_pack","\t Temperature    : %hhu \n ",MSG->_dataMessage);
@@ -158,9 +154,7 @@ implementation
         if(call AMSend.send(1,&packet, sizeof(_messageToSend_t))==SUCCESS)
         {
             dbg("radio_send", "Try to send a request to node 1 ----> execution time %s \n", sim_time_string());
-            dbg("radio_send", "Payload status:\n"); 
-            dbg_clear("radio_pack","\t Source         : %hhu \n ", call AMPacket.source(&packet));
-            dbg_clear("radio_pack","\t Destination    : %hhu \n ", call AMPacket.destination(&packet));
+            dbg("radio_send", "Payload data:\n"); 
             dbg_clear("radio_pack","\t Type of Message: %hhu \n ",MSG->_typeMessage);
             dbg_clear("radio_pack","\t Counter valuse : %hhu \n ",MSG->_counterMessage);
             dbg_clear("radio_pack","\t Temperature    : %hhu \n ",MSG->_dataMessage);
