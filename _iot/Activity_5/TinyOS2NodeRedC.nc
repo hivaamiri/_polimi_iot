@@ -104,7 +104,7 @@ implementation
             dbg_clear("radio_send","\n");
             dbg_clear("radio_pack","\n");
             //make a unic format to better separation in NODERED
-            printf("<Mote%u/value,%u,>\n", MSG -> _MoteID, MSG -> _dataMessage);
+            printf("Mote%u/value,%u,\n", MSG -> _MoteID, MSG -> _dataMessage);
             printfflush();
         }
         return _rec_buffer;
