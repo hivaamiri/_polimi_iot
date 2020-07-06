@@ -1,0 +1,269 @@
+[
+    {
+        "id": "3a9cf4b7.b12a6c",
+        "type": "tab",
+        "label": "Final_KeepYourDistance",
+        "disabled": false,
+        "info": "#KeepYourDistance\n#IoT course \n#A.Y 2019-2020 \n#Plitecnico di Milano \n#Hiva Amiri \n#Erfan Abbasi zadeh \n#Mohammad Javad Ebrahimpour"
+    },
+    {
+        "id": "ecb34367.ae85e",
+        "type": "tcp in",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "",
+        "server": "client",
+        "host": "localhost",
+        "port": "60001",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\n",
+        "topic": "",
+        "base64": false,
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "3e9304e5.1f138c"
+            ]
+        ]
+    },
+    {
+        "id": "3d9da9dd.c42d46",
+        "type": "tcp in",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "",
+        "server": "client",
+        "host": "localhost",
+        "port": "60002",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\n",
+        "topic": "",
+        "base64": false,
+        "x": 170,
+        "y": 360,
+        "wires": [
+            [
+                "3e9304e5.1f138c"
+            ]
+        ]
+    },
+    {
+        "id": "2edbe50f.34df1a",
+        "type": "tcp in",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "",
+        "server": "client",
+        "host": "localhost",
+        "port": "60003",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\n",
+        "topic": "",
+        "base64": false,
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "3e9304e5.1f138c"
+            ]
+        ]
+    },
+    {
+        "id": "5af23110.e452e",
+        "type": "tcp in",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "",
+        "server": "client",
+        "host": "localhost",
+        "port": "60004",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\n",
+        "topic": "",
+        "base64": false,
+        "x": 170,
+        "y": 520,
+        "wires": [
+            [
+                "3e9304e5.1f138c"
+            ]
+        ]
+    },
+    {
+        "id": "376a2d24.253702",
+        "type": "tcp in",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "",
+        "server": "client",
+        "host": "localhost",
+        "port": "60005",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\n",
+        "topic": "",
+        "base64": false,
+        "x": 170,
+        "y": 600,
+        "wires": [
+            [
+                "3e9304e5.1f138c"
+            ]
+        ]
+    },
+    {
+        "id": "9b45a1ee.1fd09",
+        "type": "tcp in",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "",
+        "server": "client",
+        "host": "localhost",
+        "port": "60006",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\n",
+        "topic": "",
+        "base64": false,
+        "x": 170,
+        "y": 680,
+        "wires": [
+            [
+                "3e9304e5.1f138c"
+            ]
+        ]
+    },
+    {
+        "id": "730309f1.a0d058",
+        "type": "tcp in",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "",
+        "server": "client",
+        "host": "localhost",
+        "port": "60007",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\n",
+        "topic": "",
+        "base64": false,
+        "x": 170,
+        "y": 760,
+        "wires": [
+            [
+                "3e9304e5.1f138c"
+            ]
+        ]
+    },
+    {
+        "id": "3e9304e5.1f138c",
+        "type": "csv",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "Classification",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "mote,val,sep,sender",
+        "skip": "0",
+        "x": 450,
+        "y": 520,
+        "wires": [
+            [
+                "42de9482.091c5c",
+                "1ec722ae.71565d"
+            ]
+        ]
+    },
+    {
+        "id": "3ce86c2f.98d2f4",
+        "type": "debug",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 730,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "42de9482.091c5c",
+        "type": "function",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "IFTTT formation",
+        "func": "msg.payload = {\"value1\" : msg.payload.val, \"value2\" : msg.payload.sender}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 460,
+        "wires": [
+            [
+                "ad19cea.c3e4f3",
+                "3ce86c2f.98d2f4"
+            ]
+        ]
+    },
+    {
+        "id": "ad19cea.c3e4f3",
+        "type": "ifttt out",
+        "z": "3a9cf4b7.b12a6c",
+        "eventName": "sensing_signal",
+        "key": "d773abc9.26f838",
+        "x": 740,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1ec722ae.71565d",
+        "type": "function",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "Telegram formation",
+        "func": "\nvar data = msg.payload.val ;\nvar sender = msg.payload.sender ;\nmsg.url = \"https://api.telegram.org/bot1110030125:AAEk6WnrtoKNpRbGIC6vKZkXKqgmHtZXruI/sendmessage?chat_id=89042906&text=Message from Mote \"+sender+\" >> Someone under the \" +data+\" is too close to you.\" ;\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 580,
+        "wires": [
+            [
+                "cae417be.1a63c8",
+                "c087bc29.893e7"
+            ]
+        ]
+    },
+    {
+        "id": "cae417be.1a63c8",
+        "type": "http request",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "http request to Telegram",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "",
+        "x": 810,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c087bc29.893e7",
+        "type": "debug",
+        "z": "3a9cf4b7.b12a6c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "url",
+        "x": 760,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "d773abc9.26f838",
+        "type": "ifttt-key",
+        "z": ""
+    }
+]
